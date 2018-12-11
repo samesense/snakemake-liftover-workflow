@@ -6,12 +6,12 @@ rule dl_chain_file:
     output: '{chain_prefix}ucsc/chains/{from}To{to}.over.chain.gz'
     shell:  'mv {input} {output}'
 
-rule lift_hapmap:
-    input:
-        pos = '{bed_prefix}.{from}.tolift',
-        chain = '{chain_prefix}ucsc/chains/{from}To{to}.over.chain.gz'
-    output:
-        mapped = '{liftoot}.{to}.mapped',
-        unmapped = '{liftout}{from}To{to}.unmapped'
-    shell:
-        "liftOver {input.pos} {input.chain} {output.mapped} {output.unmapped}"
+#rule lift_hapmap:
+#    input:
+#        pos = '{bed_prefix}.{from}.tolift',
+#        chain = '{chain_prefix}ucsc/chains/{from}To{to}.over.chain.gz'
+#    output:
+#        mapped = '{liftoot}.{to}.mapped',
+#        unmapped = '{liftout}{from}To{to}.unmapped'
+#    shell:
+#        "liftOver {input.pos} {input.chain} {output.mapped} {output.unmapped}"
